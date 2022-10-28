@@ -6,20 +6,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Tac-Toe</title>
     <link href="styles.css" type="text/css" rel="stylesheet" />
-    <script src="js/script.js" type="module" defer></script>
+    <script src="js/confetti.js" defer></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
-    <h1>Tic Tac Toe</h1>
-    <div id="board">
-      <button class="tile"></button>
-      <button class="tile"></button>
-      <button class="tile"></button>
-      <button class="tile"></button>
-      <button class="tile"></button>
-      <button class="tile"></button>
-      <button class="tile"></button>
-      <button class="tile"></button>
-      <button class="tile"></button>
+    <div id="game" class="hidden">
+      <h1>Tic Tac Toe</h1>
+      <div class="container">
+        <div id="game-info">
+          <div class="player" data-marker="x">
+            <p class="player-name"></p>
+            <p>Marker: X</p>
+          </div>
+          <div id="controls">
+            <button id="new-game">New Game</button>
+            <button id="change-players">Change Players</button>
+            <button id="main-menu">Main Menu</button>
+          </div>
+          <div class="player" data-marker="o">
+            <p class="player-name"></p>
+            <p>Marker: O</p>
+          </div>
+        </div>
+        <div id="board" data-status="">
+          <button
+            class="tile"
+            data-index="0"
+            data-marker=""
+            data-win=""
+          ></button>
+          <button
+            class="tile"
+            data-index="1"
+            data-marker=""
+            data-win=""
+          ></button>
+          <button
+            class="tile"
+            data-index="2"
+            data-marker=""
+            data-win=""
+          ></button>
+          <button
+            class="tile"
+            data-index="3"
+            data-marker=""
+            data-win=""
+          ></button>
+          <button
+            class="tile"
+            data-index="4"
+            data-marker=""
+            data-win=""
+          ></button>
+          <button
+            class="tile"
+            data-index="5"
+            data-marker=""
+            data-win=""
+          ></button>
+          <button
+            class="tile"
+            data-index="6"
+            data-marker=""
+            data-win=""
+          ></button>
+          <button
+            class="tile"
+            data-index="7"
+            data-marker=""
+            data-win=""
+          ></button>
+          <button
+            class="tile"
+            data-index="8"
+            data-marker=""
+            data-win=""
+          ></button>
+        </div>
+      </div>
+      <canvas id="confetti"></canvas>
+    </div>
+
+    <div id="modal-wrapper">
+      <div id="modal-window">
+        <div id="player-forms">
+          <form class="player-form" data-marker="x">
+            <h2>Player 1</h2>
+            <p>Marker: X</p>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name..."
+              required
+              minlength="3"
+            />
+            <button type="submit">OK</button>
+          </form>
+          <form class="player-form" data-marker="o">
+            <h2>Player 2</h2>
+            <p>Marker: O</p>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name..."
+              required
+              minlength="3"
+            />
+            <button type="submit">OK</button>
+          </form>
+        </div>
+        <button id="start-game">Start Game</button>
+      </div>
     </div>
   </body>
 </html>
